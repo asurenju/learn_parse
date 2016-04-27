@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block list_title %}&nbsp&nbsp联和街工作动态{% endblock %}
+
+{% block list %}
+    {% if get_links %}
+
+        {% for get_link in get_links %}
+        <li class="list-group-item" style="font-size:30px">
+
+            <a href="./{{get_link.short_link}}/page/" >
+            {{get_link.title}}
+            </a>
+            <p class="text-right">{{get_link.pub_date}}</p>
+        </li>
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+    {% endblock %}

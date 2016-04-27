@@ -1,0 +1,40 @@
+
+{% load staticfiles %}
+<!--{{ get_links }}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <title>龙华新闻</title>
+</head>
+<body style="background:rgb(195,195,195)">
+
+
+<div class="container">
+
+<ul class="list-group" >
+    <li class="list-group-item active" style="font-size:50px;text-align:center"><span class="glyphicon glyphicon-list-alt" ></span>&nbsp&nbsp龙 华 新 闻</li>
+    {% if get_links %}
+
+        {% for get_link in get_links %}
+        <li class="list-group-item" style="font-size:30px">
+
+            <a href="./{{get_link.short_link}}/page/" >
+            {{get_link.title}}
+            </a>
+            <p class="text-right">{{get_link.pub_date}}</p>
+        </li>
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+
+
+</div>
+</body>

@@ -1,0 +1,17 @@
+{% extends "base_page.html" %}
+
+{% block back_to_list %}"/parse_lianhejie"{% endblock %}
+{% block content %}
+    <div class="row">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <!--<p>{{page_info.content}}</p>-->
+                {% for content in page_info.contents %}
+                <p style="text-align:left;color:#222222;margin:0px 0;font-size:20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content}}</p>
+                {% endfor %}
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    {% endblock %}

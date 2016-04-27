@@ -1,0 +1,49 @@
+
+{% load staticfiles %}
+<!--{{ page_info}}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"></link>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--<script src="{% static 'js/jquery.pin/jquery.pin.js' %}"></script>-->
+
+
+</head>
+<body style="background:rgb(210,210,210)">
+
+
+<div class="container">
+
+      <a href="/parse" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-arrow-left" ></span>&nbsp;返回</a>
+
+    <div class="page-header" >
+        <p style="text-align:center;color:#333333;margin:20px 0;font-size:40px">{{ page_info.title }}</p>
+        <p style="text-align:center;color:#c3522f;margin:10px 0;font-size:18px">{{ page_info.tip}}</p>
+    </div>
+    <div class="row">
+        {% if page_info.imgs %}
+                {% for img in page_info.imgs %}
+                    <img src="{{img}}" class="center-block">
+                    <br>
+                {% endfor %}
+            {% else %}
+            {% endif %}
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <!--<p>{{page_info.content}}</p>-->
+                {% for content in page_info.contents %}
+                <p style="text-align:left;color:#222222;margin:0px 0;font-size:20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content}}</p>
+                {% endfor %}
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    </div>
+
+</body>
+</html>
